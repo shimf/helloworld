@@ -17,7 +17,9 @@ router.post('/', cors(), function (req, res, next) {
     const requestOptions = {
       url: apiOptions.server,
       method: 'GET',
-      json: {}
+      json: {
+        'demo' : req.body.input1
+      }
     };
 
     request(requestOptions, (err, response, body) => {
@@ -26,7 +28,8 @@ router.post('/', cors(), function (req, res, next) {
         res.send(err);
       } else if (response.statusCode === 200) {
         console.log(body);
-        res.send(body);
+        // res.send(body);
+        res.render('index', { title :'Express Result', data: JSON.stringify(body) });
       } else {
         console.log(response.statusCode);
       }

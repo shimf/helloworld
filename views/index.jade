@@ -8,10 +8,15 @@ block content
     div(data-role='fieldcontain')
       fieldset
         label(for='input1') Input1
-        input(id='input1', type='text', value='')
+        input(id='input1',name='input1',type='text', value='')
     div(data-role='controlgroup')
       fieldset
         label(for='input2') Input2
-        input(id='input2', type='text', value='')
+        input(id='input2',name='input2',type='text', value='')
     div(data-role='fieldcontain')
       input(type='submit', value='Send', data-transmition='fade', data-theme='c')
+  
+  div
+    textarea(name="result", cols="80", rows="10") 
+      #{data}
+      
