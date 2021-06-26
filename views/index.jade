@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action='/', method='post')
+    div(data-role='fieldcontain')
+      fieldset
+        label(for='input1') Input1
+        input(id='input1', type='text', value='')
+    div(data-role='controlgroup')
+      fieldset
+        label(for='input2') Input2
+        input(id='input2', type='text', value='')
+    div(data-role='fieldcontain')
+      input(type='submit', value='Send', data-transmition='fade', data-theme='c')
